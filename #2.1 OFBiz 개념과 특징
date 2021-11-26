@@ -1,0 +1,74 @@
+#OFBiz란 무엇인가?
+공통 데이터, 로직 및 선진화된 프로세스를 기반을 개발한 엔터프라이즈 응용 프로그램이며 Open Source ERP Framework
+OFBiz는 OFBiz Framework과 Application, Application source 제공
+자원, 생산, 고객, 판매, 전자상 거래 등을 관리하는 응용 프로그램
+ERP,CRM,E-COMMERCE
+#OFBiz 기본 제공 메뉴
+-Accounting
+-Asset Maintenance
+-CAtALOGue and Product Management
+-Facility and warehouse Management
+-Manufacturing
+-Order Processing
+-Inventory Manangement, automated stock replenishment
+-content management System
+-Human resources
+-people and Group Management
+-Project Management
+-Sales Force Automation
+-Work Effort Management
+-Electronic point of sale
+-Electronic commerce
+-Scrum
+#OFBiz에서 사용하는 기술
+appbar, header, body and footer로 웹 인터페이스 분할하여 레이아웃 템플릿 적용->Decorator 패턴으로 구현
+데이터를 검색, 페이지 탐색, 표현
+Layer 또한 작업과 표현으로 분리하여 구현되었으며 각 layer를 조합하여 클라이언트의 요청에 응답한다.
+#Presentation Layer
+화면. screen으로 표시
+header,left,body,footer 등에 include
+FreeMarker Template Engine, Form 및 Menu 위젯 중심
+#Business Layer
+Method, SOAP, Simple 서비스, Workflow
+자바EE에서 사용하는 개념을 중심으로 구축되어 있고, 그 개념은 여러 가지 방법으로 구현된다.
+#Data Layer
+데이터베이스 엑세스, 저장 및 비즈니스 계층에 대한 공통 데이터 인터페이스를 제공
+각 Entity는 Generic Value의 집합으로 비즈니스 계층에 제공
+#OFBiz의 특징
+개발 기간을 줄이고 오류를 줄여 효율성을 증가시킨다.
+시간 절약 및 자동화
+마케팅 및 다른 투자에 소요되는 시간과 비용 절약.
+#다중 데이터베이스 시스템
+특정 DB Vendor 정보 등 약간의 설정만 해주면 OFBiz를 설치 할때 해당 DB에 table이 생성되며 시스템 운영에 필요한 기초 데이터 및 테스트를 해볼 수 있는 테스트 data까지 자동으로 생성된다.
+다른 Application의 경우에는 DB Vendor를 바꾸게 되면 컬럼의 데이터 형태 및 SQL 문, View 등 시스템의 가장 큰 부분들이 수정될 DB  Vendor에 맞게 변경해줘야 한다.->엄청난 비용 야기
+OFBiz는 설정만 변경하여 DB Vendor를 바꿔주면 된다.->DB를 구매하는 비용 외에는 별다른 비용의 발생 없음
+OFBiz의 Enitity:DB Vendor 설정에 따라 해당 Vender의 데이터 형태, view, SQL문으로 변경해준다.
+->DB Vendor의 영향을 받지 않는다.
+#OFBiz 환경 구축 및 설치의 편의성
+OFBiz는 Framework 자체에 Tomcat 내장
+Java 세팅 후 OFBiz 소스의 압축을 풀어 설치한 다음, 간단하게 DB Vender 설정 후에 start를 시켜주면 바로 웹 페이지에서 OFBiz ERP 시스템을 사용할 수 있다.
+#OFBiz의 Application 독립성
+느슨한 관계. 
+각 Application들은 서로간 내부 통신을 하여 독립적으로 돌아가므로 source의 수정 및 변경, 설정의 변경 등에 민감하게 반응하지 않는다.
+사용하지 않는 Application에 대해서는 Application loading을 관리하는 설정 파일에서 해당 Application 설정을 제거하여 웹사이트에는 display되지 않아서 클라이언트는 사용할 수 없도록 함과 동시에 Framework 내부에는 기능이 존재하기 때문에 다른 Application에서 사용하지 않는 것으로 설정한 Application의 자원을 문제없이 사용할 수 있다.
+#OFBiz의 단일 의존성 관리
+단일 위치에서 의존성을 관리
+의존관계를 필요로 하는 곳에서 의존하는 클래스의 인스턴스를 생성.
+대부분의 Application에서 의존성은 Application에 있다.
+OFBiz는 의존성 관리를 단위 위치에서 XML로 관리하기 때문에 의존성 관리가 더욱 단순해지고 문제가 발생할 여지도 줄어든다.
+#OFBiz의 License
+라이선스 비용.
+OFBiz는 비용 없이 자유롭게 사용할 수 있으며 개인의 필요에 의해 사용자 정의하여 사용할 수도 있다.
+소스코드 공개 등의 의무가 발생하지 않는다.
+아파치 License로 배포되는 코드가 GPL 3.0으로 배포되는 코드와 결합하는 것이 가능해졌다.
+#다국어지원
+영어, 일어, 중국어, 아랍어 등 다양한 언어로 구현되어 있다.
+XML의 설정을 통해서 각 언어 지원
+국제화 데이터를 개발자가 관리할 수도 있지만 웹 툴을 통해서 개발에 대해 전혀 모르는 일반 관리자가 데이터를 관리 할 수 있기 때문에 다국적 페이지를 구축하는데 매우 용이
+협업에도 용이하여 다국적 페이지를 만드는데 시간이 매우 단축된다.
+#OFBiz 그 외 장점
+엔터프라이즈 응용 프로그램을 쉽고 효율적으로 개발하고 유지 관리할 수 있다.
+프로젝트 제작자와 개발자가 적은 시간을 투자하여 큰 리소스 없이도 새로운 기능을 개발하고 기존 기능을 유지, 확장
+OFBiz 개발팀이 소프트웨어를 사용하는 사람들로부터 지속적인 피드백을 받아 버그 수정 및 기능 업데이트를 꾸준히 하고있다.
+안전성이 검증된 ERP Application
+가능한 적은 시간과 적은 인력을 투자하여 ERP를 구축할 수 있는 좋은 기회
